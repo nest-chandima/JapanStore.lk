@@ -1,0 +1,239 @@
+/* General page style with Japanese theme */
+body {
+    font-family: 'Yu Gothic', 'Meiryo', sans-serif; /* A Japanese-friendly font */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #fefefe, #ffcccc); /* Soft white to soft red background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1500px; /* Depth for 3D effects */
+}
+
+/* Main container style with JapanStore.LK theme */
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Header style with JapanStore.LK logo */
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #d21d27; /* Japan red color */
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Coupon box style with subtle Japanese design */
+.coupon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f7;
+    border: 2px dashed #d21d27; /* Matching Japan red */
+    padding: 20px 40px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-out, box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    margin-bottom: 30px;
+}
+
+/* Coupon code text */
+#couponCode {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    font-family: 'Yu Gothic', sans-serif;
+}
+
+/* Copy button style with red JapanStore theme */
+#copyButton {
+    background: #d21d27; /* Japan red */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#copyButton:hover {
+    background: #b11a21;
+}
+
+#copyButton:active {
+    background: #9f161b;
+}
+
+/* Realistic tear effect animation */
+@keyframes tear {
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg) scale(1);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    40% {
+        transform: rotate3d(0, 1, 0, 15deg) scale(1.05);
+        clip-path: polygon(0% 0%, 90% 10%, 95% 90%, 0% 100%);
+    }
+    70% {
+        transform: rotate3d(0, 1, 0, 30deg) scale(1.1);
+        clip-path: polygon(0% 0%, 80% 20%, 95% 80%, 0% 100%);
+    }
+    100% {
+        transform: rotate3d(0, 1, 0, 45deg) scale(1.15);
+        clip-path: polygon(0% 0%, 70% 30%, 100% 70%, 0% 100%);
+    }
+}
+
+/* 3D bounce effect */
+@keyframes bounce {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Adding a slight deformation on tear */
+@keyframes deform {
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+    50% {
+        transform: rotate3d(0, 1, 0, 20deg) scale(1.1);
+    }
+    100% {
+        transform: rotate3d(0, 1, 0, 45deg) scale(1.2);
+    }
+}
+
+/* Adding 3D effects to the tear */
+.coupon-tear {
+    animation: tear 1.2s ease-out, bounce 0.5s 1s ease-out, deform 0.6s ease-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Shadow and glow effect on hover */
+.coupon-box:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05) rotate3d(1, 1, 0, 10deg);
+}
+
+/* Adding decorative elements around the coupon */
+.coupon-box::before,
+.coupon-box::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 2px solid #d21d27; /* Matching Japan red */
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.coupon-box::before {
+    top: -15px;
+    left: -15px;
+}
+
+.coupon-box::after {
+    bottom: -15px;
+    right: -15px;
+}
+
+/* Hover effect on the coupon text */
+.coupon-box:hover #couponCode {
+    text-shadow: 0 0 8px rgba(255, 165, 0, 0.7);
+}
+
+/* New section for the thank you message */
+#thankYouMessage {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling for the product and discount info */
+#productInfo {
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .coupon-box {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #couponCode {
+        font-size: 24px;
+    }
+
+    #copyButton {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #thankYouMessage,
+    #productInfo {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .coupon-box {
+        padding: 15px 25px;
+    }
+
+    #couponCode {
+        font-size: 20px;
+    }
+
+    #copyButton {
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+
+    #thankYouMessage,
+    #productInfo {
+        font-size: 12px;
+    }
+}
